@@ -1,0 +1,186 @@
+/* Archivo style.css separado del HTML */
+:root {
+    --primary: #0c00fa;
+    --secondary: #7f3bf5;
+    --bg: #050505;
+    --card-bg: rgba(23, 30, 45, 0.85);
+    --text: #f8fafc;
+    --white-border: rgb(255, 255, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at center, #1a1c2e 0%, #050505 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: var(--text);
+}
+
+/* --- TARJETA PRINCIPAL CON BORDE BLANCO --- */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    max-width: 850px;
+    width: 100%;
+    border-radius: 24px;
+    /* Borde blanco sutil y sombra con brillo */
+    border: 1px solid var(--white-border);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(255, 255, 255, 0.03); 
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+/* Línea de brillo premium en la parte superior */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    z-index: 10;
+}
+
+/* --- SECCIÓN IZQUIERDA (PERFIL) --- */
+.photo-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 50px 30px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid var(--white-border);
+}
+
+.photo-placeholder {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    margin-bottom: 25px;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.name {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* --- SECCIÓN DERECHA (CONTACTOS) --- */
+.info-section {
+    padding: 45px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Borde en cada item */
+}
+
+.info-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(8px);
+    border-color: rgba(255, 255, 255, 0.4); /* El borde se ilumina */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 1.3em;
+    min-width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+}
+
+.info-content span {
+    display: block;
+    font-size: 0.72em;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.info-content p {
+    font-size: 0.95em;
+    font-weight: 400;
+    word-break: break-all;
+}
+
+/* --- RESPONSIVE PARA CELULARES --- */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        max-width: 420px;
+    }
+
+    .photo-section {
+        width: 100%;
+        padding: 40px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--white-border);
+    }
+    .info-section {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .photo-placeholder {
+        width: 110px;
+        height: 110px;
+        font-size: 40px;
+    }
+    .name {
+        font-size: 1.5em;
+    }
+    .info-item:hover {
+        transform: translateY(-3px); /* En móvil es mejor hacia arriba */
+    }
+}

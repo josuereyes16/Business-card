@@ -2,190 +2,61 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antonio Reyes - Ingeniero de Sistemas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0a;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .card {
-            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-            max-width: 900px;
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            overflow: hidden;
-            border: 1px solid #333;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-        }
-
-        .photo-section {
-            background: linear-gradient(135deg, #516ff7 0%, #2341c7 100%);
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .photo-placeholder {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: #fff;
-            margin-bottom: 20px;
-            border: 4px solid #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .name {
-            color: white;
-            font-size: 1.8em;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .title {
-            color: rgba(255,255,255,0.9);
-            font-size: 0.95em;
-            font-weight: 300;
-            line-height: 1.5;
-        }
-
-        .info-section {
-            padding: 40px 35px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 18px;
-            color: #e0e0e0;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #2341c7 0%, #7d00fa 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            flex-shrink: 0;
-        }
-
-        .info-item a {
-            color: #b8b8ff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .info-item a:hover {
-            color: #667eea;
-        }
-
-        @media (max-width: 768px) {
-            .card {
-                grid-template-columns: 1fr;
-                max-width: 450px;
-            }
-            
-            .photo-section {
-                padding: 30px 20px;
-            }
-            
-            .photo-placeholder {
-                width: 120px;
-                height: 120px;
-                font-size: 50px;
-            }
-            
-            .name {
-                font-size: 1.5em;
-            }
-            
-            .title {
-                font-size: 0.9em;
-            }
-            
-            .info-section {
-                padding: 30px 25px;
-            }
-            
-            .info-item {
-                margin-bottom: 15px;
-            }
-        }
+    <link rel="stylesheet" href="style.css">
+    
     </style>
 </head>
 <body>
+
     <div class="card">
         <div class="photo-section">
             <div class="photo-placeholder">AR</div>
-            <div class="name">Antonio Reyes</div>
-            <div class="title">Ingeniero de Sistemas<br>Desarrollador Full Stack | Tester QA Automation</div>
+            <h1 class="name">Antonio Reyes</h1>
+            <p class="title">Ingeniero de Sistemas<br>Full Stack | QA Automation</p>
         </div>
 
         <div class="info-section">
-            <div class="info-item">
-                <div class="icon">📍</div>
-                <div>Cúcuta, Colombia</div>
-            </div>
+            <a href="mailto:antoniojosuerp@ufps.edu.co" class="info-item">
+                <span class="icon">📧</span>
+                <div class="info-content">
+                    <span>Email Institucional</span>
+                    <p>antoniojosuerp@ufps.edu.co</p>
+                </div>
+            </a>
 
-            <div class="info-item">
-                <div class="icon">📱</div>
-                <div><a href="https://wa.me/573143404164">+57 3143404164</a></div>
-            </div>
+            <a href="https://wa.me/573143404164" class="info-item" target="_blank">
+                <span class="icon">📱</span>
+                <div class="info-content">
+                    <span>WhatsApp</span>
+                    <p>+57 314 340 4164</p>
+                </div>
+            </a>
 
-            <div class="info-item">
-                <div class="icon">📧</div>
-                <div><a href="mailto:antoniojosuerp@ufps.edu.co">antoniojosuerp@ufps.edu.co</a></div>
-            </div>
+            <a href="https://github.com/josuereyes16" target="_blank" class="info-item">
+                <span class="icon">💻</span>
+                <div class="info-content">
+                    <span>GitHub</span>
+                    <p>@josuereyes16</p>
+                </div>
+            </a>
 
-            <div class="info-item">
-                <div class="icon">🔗</div>
-                <div><a href="https://github.com/josuereyes16" target="_blank">GitHub</a></div>
-            </div>
+            <a href="https://www.linkedin.com/in/josuereyes16/" target="_blank" class="info-item">
+                <span class="icon">💼</span>
+                <div class="info-content">
+                    <span>LinkedIn</span>
+                    <p>Conectar en LinkedIn</p>
+                </div>
+            </a>
 
-            <div class="info-item">
-                <div class="icon">💼</div>
-                <div><a href="https://www.linkedin.com/in/josuereyes16/" target="_blank">LinkedIn</a></div>
-            </div>
-
-            <div class="info-item">
-                <div class="icon">🌐</div>
-                <div><a href="https://josue-reyes.netlify.app/" target="_blank">Portafolio</a></div>
-            </div>
+            <a href="https://josue-reyes.netlify.app/" target="_blank" class="info-item">
+                <span class="icon">🌐</span>
+                <div class="info-content">
+                    <span>Portafolio</span>
+                    <p>Ver mis proyectos</p>
+                </div>
+            </a>
         </div>
     </div>
+
 </body>
 </html>

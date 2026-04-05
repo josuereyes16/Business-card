@@ -1,63 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de Presentación - Antonio Reyes</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonio Reyes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <div class="photo-section">
-            <img src="imgs/foto5.jpg" alt="Antonio Reyes" class="photo-placeholder">
-            <h1 class="name">Antonio Reyes</h1>
-            <p class="title">Ingeniero de Sistemas<br>Full Stack | QA Automation</p>
-        </div>
 
-        <div class="info-section">
-            <a href="mailto:antoniojosuerp@ufps.edu.co" class="info-item">
-                <span class="icon">📧</span>
-                <div class="info-content">
-                    <span>Email Institucional</span>
-                    <p>antoniojosuerp@ufps.edu.co</p>
-                </div>
-            </a>
+<canvas id="particles"></canvas>
+<div class="noise"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
 
-            <a href="https://wa.me/573143404164" class="info-item" target="_blank">
-                <span class="icon">📱</span>
-                <div class="info-content">
-                    <span>WhatsApp</span>
-                    <p>+57 314 340 4164</p>
-                </div>
-            </a>
+<!-- LANG TOGGLE -->
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
 
-            <a href="https://github.com/josuereyes16" target="_blank" class="info-item">
-                <span class="icon">💻</span>
-                <div class="info-content">
-                    <span>GitHub</span>
-                    <p>@josuereyes16</p>
-                </div>
-            </a>
+<div class="card">
+  <div class="card-glow"></div>
 
-            <a href="https://www.linkedin.com/in/josuereyes16/" target="_blank" class="info-item">
-                <span class="icon">💼</span>
-                <div class="info-content">
-                    <span>LinkedIn</span>
-                    <p>Conectar en LinkedIn</p>
-                </div>
-            </a>
-
-            <a href="https://josue-reyes.netlify.app/" target="_blank" class="info-item">
-                <span class="icon">🌐</span>
-                <div class="info-content">
-                    <span>Portafolio</span>
-                    <p>Ver mis proyectos</p>
-                </div>
-            </a>
-        </div>
+  <!-- LEFT -->
+  <div class="left">
+    <div class="avatar-wrap">
+      <div class="avatar-pulse"></div>
+      <div class="avatar-pulse2"></div>
+      <div class="avatar-ring"></div>
+      <!-- Cambia src por tu foto real. Si no tienes, usa el fallback: -->
+      <!-- <div class="avatar-fallback">AR</div> -->
+      <img src="imgs/Foto1.jpg" class="avatar-img" alt="Antonio Reyes"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="avatar-fallback" style="display:none">AR</div>
     </div>
+
+    <h1 class="name">Antonio<br>Reyes</h1>
+    <p class="role" data-es="Ingeniero de Sistemas" data-en="Systems Engineer">
+      Ingeniero de Sistemas
+    </p>
+    <p class="tagline"
+       data-es="Desarrollo y aseguro la calidad del software desde el código hasta la experiencia final ⚡"
+       data-en="I build and ensure software quality from code to end-user experience ⚡">
+      Desarrollo y aseguro la calidad del software desde el código hasta la experiencia final ⚡
+    </p>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      <span data-es="Disponible" data-en="Available">Disponible</span>
+    </div>
+
+    <div class="skills">
+      <span class="skill-tag">Full Stack Developer | QA Engineer Automation</span>
+    </div>
+
+    <a href="https://josue-reyes.netlify.app/" target="_blank" class="btn">
+      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.8em"></i>
+      <span data-es="Ver Portafolio" data-en="View Portfolio">Ver Portafolio</span>
+    </a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <p class="section-label" data-es="Contacto &amp; Redes" data-en="Contact &amp; Socials">
+      Contacto &amp; Redes
+    </p>
+
+    <a href="https://mail.google.com/mail/?view=cm&to=inge.antonioreyes@gmail.com" class="item">
+      <div class="item-icon email"><i class="fa-solid fa-envelope"></i></div>
+      <div class="item-text">
+        <span class="item-label" data-es="Correo" data-en="Email">Correo</span>
+        <span class="item-value">inge.antonioreyes@gmail.com</span>
+      </div>
+      <i class="fa-solid fa-arrow-right item-arrow"></i>
+    </a>
+
+    <a href="https://wa.me/573143404164" target="_blank" class="item">
+      <div class="item-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+      <div class="item-text">
+        <span class="item-label" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+        <span class="item-value">+57 314 340 4164</span>
+      </div>
+      <i class="fa-solid fa-arrow-right item-arrow"></i>
+    </a>
+
+    <div class="divider"></div>
+
+    <a href="https://github.com/josuereyes16" target="_blank" class="item">
+      <div class="item-icon gh"><i class="fa-brands fa-github"></i></div>
+      <div class="item-text">
+        <span class="item-label" data-es="GitHub" data-en="GitHub">GitHub</span>
+        <span class="item-value">@josuereyes16</span>
+      </div>
+      <i class="fa-solid fa-arrow-right item-arrow"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/josuereyes16/" target="_blank" class="item">
+      <div class="item-icon li"><i class="fa-brands fa-linkedin"></i></div>
+      <div class="item-text">
+        <span class="item-label" data-es="LinkedIn" data-en="LinkedIn">LinkedIn</span>
+        <span class="item-value" data-es="Conectar conmigo" data-en="Connect with me">
+          Conectar conmigo
+        </span>
+      </div>
+      <i class="fa-solid fa-arrow-right item-arrow"></i>
+    </a>
+
+    <div class="divider"></div>
+
+    <p class="right-footer">
+      <span data-es="© 2025 Antonio Reyes · Todos los derechos reservados"
+            data-en="© 2025 Antonio Reyes · All rights reserved">
+        © 2025 Antonio Reyes · Todos los derechos reservados
+      </span>
+    </p>
+  </div>
+</div>
+
+<!-- JS al final del body = no bloquea el render del HTML -->
+<script src="main.js"></script>
 </body>
 </html>
